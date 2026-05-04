@@ -11,4 +11,4 @@ categories:
     color: "emerald"
     feeds:
       - name: "Biz/Zine"
-        url: "https://bizzine.jp/rss/new/20/index.xml"
+        url: "https://bizzine.jp/rss/index.xml"
