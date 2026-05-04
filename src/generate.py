@@ -38,6 +38,9 @@ def parse_date(entry):
     return ""
 
 
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; RSSFeedBot/1.0)"}
+
+
 def fetch_categories(config_path):
     with open(config_path, encoding="utf-8") as f:
         config = yaml.safe_load(f)
@@ -46,7 +49,8 @@ def fetch_categories(config_path):
     for category in config.get("categories", []):
         feeds_data = []
         for feed_cfg in category.get("feeds", []):
-            parsed = feedparser.parse(feed_cfg["url"])
+            parsed = feedparser.parse(feed_cfg["url"], request_headers=HEADERS)
+            print(f"  {feed_cfg['name']}: status={parsed.get('status', 'N/A')} entries={len(parsed.entries)}")
             entries = []
             for entry in parsed.entries[:MAX_ENTRIES_PER_FEED]:
                 entries.append(
