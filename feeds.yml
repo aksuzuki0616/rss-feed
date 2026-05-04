@@ -1,0 +1,14 @@
+categories:
+  - name: "プロダクトマネジメント"
+    color: "blue"
+    feeds:
+      - name: "ProductZine"
+        url: "https://productzine.jp/rss/index.xml"
+      - name: "MarkeZine"
+        url: "https://markezine.jp/rss/index.xml"
+
+  - name: "SaaS"
+    color: "emerald"
+    feeds:
+      - name: "SELECK"
+        url: "https://seleck.cc/feed"
